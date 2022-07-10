@@ -99,6 +99,23 @@ describe('App method', () => {
         validateAppDetails(app);
       });
   });
+  it('should fetch valid application data for country: au', () => {
+    return gplay.app({
+      appId: 'com.squaretrade.personalcloud',
+      country: 'au',
+      lang: 'en'
+    })
+      .then((app) => {
+        assert.equal(app.url, 'https://play.google.com/store/apps/details?id=com.squaretrade.personalcloud&hl=en&gl=au');
+        assert.equal(app.genre, 'Productivity');
+        assert.equal(app.androidVersionText, '6.0');
+        assert.equal(app.available, true);
+        assert.equal(app.title, 'SquareTrade Cloud');
+        assert.equal(app.summary, 'Cloud storage | Backup photos &amp; other content | Easily organize, search, &amp; share');
+        assert.equal(app.currency, 'AUD');
+      });
+  });
+
 
   it('should properly parse a VARY android version', () => {
     return gplay.app({ appId: 'com.facebook.katana' })
