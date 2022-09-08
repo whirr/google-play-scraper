@@ -25,9 +25,10 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
     "debug": "^2.2.0",
-    "got": "^11.8.3",
     "memoizee": "^0.4.11",
-    "ramda": "^0.21.0"
+    "ramda": "^0.21.0",
+    "request": "^2.88.0",
+    "throttled-request": "^0.1.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
